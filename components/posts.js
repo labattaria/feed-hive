@@ -1,3 +1,5 @@
+"use client";
+
 import { useOptimistic } from "react";
 import { formatDate } from "@/lib/format";
 import LikeButton from "./like-icon";
