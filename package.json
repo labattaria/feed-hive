@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@prisma/client": "^6.13.0",
-    "better-sqlite3": "^9.4.3",
     "cloudinary": "^2.0.2",
     "next": "14.1.0",
     "next-cloudinary": "^6.16.0",
