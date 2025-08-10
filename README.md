@@ -18,7 +18,7 @@ This is the PostWave Next.js + React app
 
 PostWave is a modern Next.js demo application that brings people together to share anything they love — from ideas and stories to photos and creations. Post your thoughts, discover inspiring content from others, and show your appreciation with a like. A friendly space to connect, express, and be inspired.
 
-The app in this repo is hosted on [![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)](#), hosting public URL:
+The app in this repo is hosted on [![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)](#), hosting public URL: [https://postwave-next.vercel.app/](https://postwave-next.vercel.app/)
 
 But you can use this app manually on your local machine
 
