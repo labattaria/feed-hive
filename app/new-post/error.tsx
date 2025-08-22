@@ -1,6 +1,12 @@
 'use client';
 
-export default function NewPostError({ error }) {
+interface NewPostErrorProps {
+  error: {
+    message: string;
+  };
+}
+
+export default function NewPostError({ error }: NewPostErrorProps) {
   return (
     <>
       <h2>An error occurred!</h2>

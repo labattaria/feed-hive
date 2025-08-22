@@ -1,18 +1,32 @@
 "use client";
 
 import { useFormState } from "react-dom";
+import { useRouter } from "next/navigation";
 import FormSubmit from "./form-submit";
+import { createPost as serverCreatePost } from "@/actions/posts";
 
-interface FormState {
+export interface FormState {
   errors?: string[];
 }
 
-interface PostFormProps {
-  action: (state: FormState, formData?: FormData) => FormState | Promise<FormState>;
-}
+export default function PostForm() {
+  const router = useRouter();
 
-export default function PostForm({ action }: PostFormProps) {
-  const [state, formAction] = useFormState<FormState>(action, {});
+  const [state, formAction] = useFormState<FormState>(
+    async (_state, formData?: FormData) => {
+      if (!formData) return { errors: ["No form data submitted"] };
+
+      const result = await serverCreatePost(formData);
+
+      if (!result?.errors) {
+        router.push("/feed");
+        return { errors: [] };
+      }
+
+      return { errors: result.errors };
+    },
+    {}
+  );
 
   return (
     <>
@@ -24,12 +38,7 @@ export default function PostForm({ action }: PostFormProps) {
         </p>
         <p className="form-control">
           <label htmlFor="image">Image</label>
-          <input
-            type="file"
-            accept="image/png, image/jpeg"
-            id="image"
-            name="image"
-          />
+          <input type="file" accept="image/png, image/jpeg" id="image" name="image" />
         </p>
         <p className="form-control">
           <label htmlFor="content">Content</label>
