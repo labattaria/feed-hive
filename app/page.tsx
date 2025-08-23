@@ -1,15 +1,17 @@
 import { Suspense } from "react";
-
+import { Metadata } from "next";
 import Posts from "@/components/posts";
 import { getPosts } from "@/lib/posts";
+import type { PostType } from "@/types/post";
+import './globals.css';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Latest Posts",
-  description: "Browse our latest posts!",
+  description: "Browse our latest posts!"
 };
 
 async function LatestPosts() {
-  const latestPosts = await getPosts(2);
+  const latestPosts: PostType[] = await getPosts(2);
   return <Posts posts={latestPosts} />;
 }
 
@@ -18,7 +20,7 @@ export default async function Home() {
     <>
       <h1>Welcome back!</h1>
       <p>Here's what you might've missed.</p>
-      <section id="latest-posts">
+      <section className="mt-8">
         <Suspense fallback={<p>Loading recent posts...</p>}>
           <LatestPosts />
         </Suspense>

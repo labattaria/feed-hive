@@ -1,8 +1,9 @@
-import prisma from "./prisma.js";
+import prisma from './prisma';
+import type { PostType, NewPost, PostFromDb } from "../types/post.js";
 
-export async function getPosts(maxNumber) {
-  const posts = await prisma.post.findMany({
-    take: maxNumber || undefined,
+export async function getPosts(maxNumber?: number): Promise<PostType[]> {
+  const posts: PostFromDb[] = await prisma.post.findMany({
+    take: maxNumber ?? undefined,
     orderBy: { createdAt: "desc" },
     include: {
       user: true,
@@ -23,7 +24,7 @@ export async function getPosts(maxNumber) {
   }));
 }
 
-export async function storePost(post) {
+export async function storePost(post: NewPost) {
   return prisma.post.create({
     data: {
       imageUrl: post.imageUrl,
@@ -34,7 +35,7 @@ export async function storePost(post) {
   });
 }
 
-export async function updatePostLikeStatus(postId, userId) {
+export async function updatePostLikeStatus(postId: number, userId: number) {
   const existingLike = await prisma.like.findUnique({
     where: {
       userId_postId: {

@@ -1,7 +1,7 @@
 import prisma from "../lib/prisma.js";
 
-async function main() {
-  const count = await prisma.user.count();
+async function main(): Promise<void> {
+  const count: number = await prisma.user.count();
   if (count === 0) {
     await prisma.user.createMany({
       data: [
@@ -29,7 +29,11 @@ main()
     console.log("Database seeded");
     process.exit(0);
   })
-  .catch((err) => {
-    console.error(err);
+  .catch((err: unknown) => {
+    if (err instanceof Error) {
+      console.error(err.message);
+    } else {
+      console.error(err);
+    }
     process.exit(1);
   });

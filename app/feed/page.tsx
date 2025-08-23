@@ -1,8 +1,10 @@
 import Posts from "@/components/posts";
 import { getPosts } from "@/lib/posts";
+import { Metadata } from "next";
+import type { PostType } from "@/types/post";
 
-export async function generateMetadata() {
-  const posts = await getPosts();
+export async function generateMetadata(): Promise<Metadata> {
+  const posts: PostType[] = await getPosts();
   const numberOfPosts = posts.length;
 
   return {
@@ -12,7 +14,7 @@ export async function generateMetadata() {
 }
 
 export default async function FeedPage() {
-  const posts = await getPosts();
+  const posts: PostType[] = await getPosts();
   return (
     <>
       <h1>All posts by all users</h1>
