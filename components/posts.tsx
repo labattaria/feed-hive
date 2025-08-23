@@ -25,8 +25,8 @@ interface PostsProps {
 
 function Post({ post, action }: PostProps) {
   return (
-    <article className="post">
-      <div className="post-image">
+    <article className="flex gap-4 p-4 rounded-md border border-[#443f41] bg-[#131011] shadow-[0_0_6px_rgba(0,0,0,0.5)]">
+      <div className="relative w-32 h-24">
         <Image
           loader={imageLoader}
           src={post.image}
@@ -34,13 +34,14 @@ function Post({ post, action }: PostProps) {
           width={200}
           height={120}
           quality={80}
+          className="w-32 h-24 object-cover"
         />
       </div>
-      <div className="post-content">
-        <header>
+      <div className="flex-1">
+        <header className="mb-6 flex justify-between items-start">
           <div>
-            <h2>{post.title}</h2>
-            <p>
+            <h2 className="m-0 text-[1.5rem] font-bold">{post.title}</h2>
+            <p className="m-0 text-[0.9rem] text-[#b1a9ac]">
               Shared by {post.userFirstName} on{" "}
               <time dateTime={post.createdAt.toString()}>
                 {formatDate(post.createdAt)}
@@ -51,7 +52,9 @@ function Post({ post, action }: PostProps) {
             <button
               type="button"
               onClick={() => action(post.id)}
-              className={`like-button ${post.isLiked ? "liked" : ""}`}
+              className={`bg-transparent border-none p-0 ${
+                post.isLiked ? "liked" : ""
+              }`}
             >
               <LikeButton isLiked={post.isLiked} />
             </button>
@@ -94,7 +97,7 @@ async function updatePost(postId: number): Promise<void> {
 }
 
   return (
-    <ul className="posts">
+    <ul className="list-none m-0 p-0 flex flex-col gap-4">
       {optimisticPosts.map((post) => (
         <li key={post.id}>
           <Post post={post} action={updatePost} />

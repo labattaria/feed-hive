@@ -2,7 +2,11 @@
 
 import { useFormStatus } from "react-dom";
 
-export default function FormSubmit() {
+interface FormSubmitProps {
+  onReset?: () => void;
+}
+
+export default function FormSubmit({ onReset }: FormSubmitProps) {
   const status = useFormStatus();
 
   if (status.pending) {
@@ -11,8 +15,18 @@ export default function FormSubmit() {
 
   return (
     <>
-      <button type="reset">Reset</button>
-      <button>Create Post</button>
+      <button
+        type="reset"
+        onClick={onReset}
+        className="font-inherit py-2 px-4 text-base rounded border-none bg-transparent hover:text-[#e299b6] cursor-pointer"
+      >
+        Reset
+      </button>
+      <button
+        className="font-inherit py-2 px-4 text-base rounded border-none bg-[#e32195] text-[#eee7ea] hover:bg-[#a80a69] cursor-pointer"
+      >
+        Create Post
+      </button>
     </>
   );
 }

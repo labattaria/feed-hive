@@ -5,10 +5,28 @@
 }
 
 html {
-  font-family: 'Merriweather', serif;
+  font-family: Merriweather, serif;
 }
 
-body {
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  font-weight: bold;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+
+p {
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+@import "tailwindcss";
+
+/* body {
   margin: 0;
   background-color: #363234;
   color: #eee7ea;
@@ -213,4 +231,4 @@ main {
 
 .like-button.liked:hover svg {
   fill: transparent;
-}
+} */

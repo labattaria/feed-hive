@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import Posts from "@/components/posts";
 import { getPosts } from "@/lib/posts";
 import type { PostType } from "@/types/post";
+import './globals.css';
 
 export const metadata: Metadata = {
   title: "Latest Posts",
@@ -19,7 +20,7 @@ export default async function Home() {
     <>
       <h1>Welcome back!</h1>
       <p>Here's what you might've missed.</p>
-      <section id="latest-posts">
+      <section className="mt-8">
         <Suspense fallback={<p>Loading recent posts...</p>}>
           <LatestPosts />
         </Suspense>
