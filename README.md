@@ -1,6 +1,6 @@
 **Read in another language: [Українська](README.ukr.md), [English](README.md).**
 
-# PostWave app
+# PostWave App
 
 ---
 
@@ -10,11 +10,13 @@
 
 [![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)](#)
 [![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](#)
+[![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](#)
 [![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](#)
 [![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)](#)
 [![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)](#)
+[![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](#)
 
-This is the PostWave Next.js + React app
+This is the PostWave Next.js, React, TypeScript app
 
 PostWave is a modern Next.js demo application that brings people together to share anything they love — from ideas and stories to photos and creations. Post your thoughts, discover inspiring content from others, and show your appreciation with a like. A friendly space to connect, express, and be inspired.
 
