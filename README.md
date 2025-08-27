@@ -29,7 +29,9 @@ But you can use this app manually on your local machine
 - **Next.js** - React framework for building fast, full-stack web applications with server-side rendering and static site generation
 - **React** - Library used for building user interfaces, particularly for single-page applications where you need a fast, interactive experience
 - **Prisma** – A modern ORM that streamlines database access by providing a type-safe, auto-generated query builder and intuitive API for working with relational databases efficiently and reliably
+- **TypeScript** – static typing for safer and more maintainable code
 - **Cloudinary** - Image and video storage, optimization, and delivery service
+- **Tailwind CSS** – utility-first CSS framework for fast and responsive UI styling
 
 The full list of dependencies can be found in the **package.json** file.
 
